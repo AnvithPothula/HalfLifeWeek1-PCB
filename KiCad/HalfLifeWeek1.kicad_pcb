@@ -4028,6 +4028,16 @@
 		)
 	)
 	(gr_line
+		(start 161.5 71)
+		(end 160.75 66.75)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.SilkS")
+		(uuid "29efe035-b134-4ba6-b274-70d5d1b73823")
+	)
+	(gr_line
 		(start 97 82)
 		(end 138 82)
 		(stroke
