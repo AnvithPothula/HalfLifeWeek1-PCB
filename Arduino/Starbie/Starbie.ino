@@ -19,6 +19,10 @@
 #include <DHT.h>
 #include <Preferences.h>
 #include <math.h>
+#include <Starbie_Gestures_inferencing.h>
+
+float featureBuffer[EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE];
+size_t featureIndex = 0;
 
 // =========================== BEGINNER SETTINGS ===========================
 // Everything most builders will want to customize is in this one section.
@@ -163,7 +167,7 @@ const int MENU_ITEM_Y[] = {12, 32, 53, 32};
 const int MENU_BALL_X_RANGE = 37;
 const int MENU_BALL_Y_RANGE = 22;
 const uint16_t BUTTON_DEBOUNCE_MS = 30;
-const uint16_t MPU_READ_INTERVAL_MS = 30;
+const uint16_t MPU_READ_INTERVAL_MS = 16;
 const uint16_t DHT_READ_INTERVAL_MS = 2200;
 const uint16_t SHAKE_COOLDOWN_MS = 650;
 const float STANDARD_GRAVITY = 9.80665f;
@@ -371,22 +375,66 @@ void updateMenuBall() {
   }
 }
 
-void checkForShake() {
+void checkForGesture() {
   if (!mpuFound || currentView != PET_VIEW) {
     return;
   }
 
-  const float magnitude = sqrtf(accelerationX * accelerationX +
-                                accelerationY * accelerationY +
-                                accelerationZ * accelerationZ);
-  const uint32_t now = millis();
-  if (fabsf(magnitude - STANDARD_GRAVITY) >= SHAKE_THRESHOLD &&
-      now - lastShakeAt >= SHAKE_COOLDOWN_MS) {
-    lastShakeAt = now;
-    nappingUntil = 0;  // A shake wakes a sleeping pet right away.
-    shakeAnimationEndsAt = now + 350;
-    changePet(SHAKE_JOY_CHANGE, SHAKE_ENERGY_CHANGE, SHAKE_FULLNESS_CHANGE);
-    savePet();
+  // 1. Add the latest MPU readings to the neural network buffer
+  featureBuffer[featureIndex++] = accelerationX;
+  featureBuffer[featureIndex++] = accelerationY;
+  featureBuffer[featureIndex++] = accelerationZ;
+
+  // 2. When we have 2 full seconds of data, run the prediction
+  if (featureIndex >= EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE) {
+    featureIndex = 0; // Reset buffer for the next 2-second window
+    
+    signal_t signal;
+    numpy::signal_from_buffer(featureBuffer, EI_CLASSIFIER_DSP_INPUT_FRAME_SIZE, &signal);
+    
+    ei_impulse_result_t result = {0};
+    run_classifier(&signal, &result, false);
+
+    // 3. Find the gesture with the highest confidence
+    int bestMatch = -1;
+    float highestConfidence = 0.0;
+    for (uint16_t i = 0; i < EI_CLASSIFIER_LABEL_COUNT; i++) {
+      if (result.classification[i].value > highestConfidence) {
+        highestConfidence = result.classification[i].value;
+        bestMatch = i;
+      }
+    }
+
+    // 4. Trigger the custom Starbie reactions if the model is over 80% confident
+    if (highestConfidence > 0.80f && bestMatch != -1) {
+      const char* predictedGesture = result.classification[bestMatch].label;
+      const uint32_t now = millis();
+
+      if (strcmp(predictedGesture, "nap") == 0) {
+        nappingPetX = petWalkingX(now);
+        nappingUntil = now + NAP_DURATION_MS;
+        changePet(0, 10, 0); 
+      } 
+      else if (strcmp(predictedGesture, "play") == 0) {
+        nappingUntil = 0;
+        playRunStartedAt = now;
+        heartAnimationEndsAt = now + playRunDuration();
+        changePet(10, -5, -5);
+      } 
+      else if (strcmp(predictedGesture, "feed") == 0) {
+        nappingUntil = 0;
+        petJumpStartedAt = now;
+        changePet(5, 0, 15);
+      } 
+      else if (strcmp(predictedGesture, "pet") == 0) {
+        nappingUntil = 0;
+        petJumpStartedAt = now;
+        heartAnimationEndsAt = now + HEARTS_DURATION_MS;
+        changePet(10, 0, 0);
+      }
+      
+      savePet();
+    }
   }
 }
 
@@ -657,7 +705,7 @@ void loop() {
   if (currentView == MENU_VIEW) {
     updateMenuBall();
   } else {
-    checkForShake();
+    checkForGesture();
   }
 
   drawCurrentView();
