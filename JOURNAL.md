@@ -6,7 +6,7 @@
 > [!NOTE]
 > This devlog is mirrored from [Half Life](https://halflife.hackclub.com) – [open the project](https://halflife.hackclub.com/projects/cmv15p2tu00bq01m4bhmlczhe). Editing it here will not change the platform's copy, and the next sync overwrites this file.
 
-> A tiny motion-controlled digital pet, basically a desktop Tamagotchi. Totally not a Starboy.
+> This project is the Starbie from the guide, however instead of shaking the Starbie for the actions to occur, you use gestures instead.
 
 | Week | Tier | Hours logged | Entries |
 | --- | --- | --- | --- |
