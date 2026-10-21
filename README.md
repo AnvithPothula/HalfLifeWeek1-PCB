@@ -46,12 +46,12 @@ The final bill for the materials is in [BOM.csv](BOM.csv), and you can also see 
 | Item | Qty | Supplier | Cost/item | Total cost | Link |
 | --- | ---: | --- | ---: | ---: | --- |
 | XIAO ESP32 C3 | 1 | AliExpress | $8.61 | $8.61 | [AliExpress](https://www.aliexpress.us/item/3256811424353248.html) |
-| 0.96 OLED | 1 | AliExpress | $2.06 | $2.06 | [AliExpress](https://www.aliexpress.us/item/3256805941097111.html) |
+| 0.96 OLED | 1 | AliExpress | $2.07 | $2.07 | [AliExpress](https://www.aliexpress.us/item/3256805941097111.html) |
 | MPU6050 | 1 | AliExpress | $1.89 | $1.89 | [AliExpress](https://www.aliexpress.us/item/2251800504697800.html) |
 | DHT11 | 1 | AliExpress | $1.54 | $1.54 | [AliExpress](https://www.aliexpress.us/item/3256807009759634.html) |
-| MX Switches (10-pack) | 1 | AliExpress | $1.99 | $1.99 | [AliExpress](https://www.aliexpress.us/item/3256806171731329.html) |
+| MX Switches (10-pack) | 1 | AliExpress | $2.00 | $2.00 | [AliExpress](https://www.aliexpress.us/item/3256806171731329.html) |
 | Keycaps (10-pack) | 1 | AliExpress | $2.47 | $2.47 | [AliExpress](https://www.aliexpress.us/item/3256807312571573.html) |
-| 10k Resistor (100-pack) | 1 | AliExpress | $1.27 | $1.27 | [AliExpress](https://www.aliexpress.us/item/3256806338200607.html) |
-| PCB | 1 | JLCPCB | $9.54 | $9.54 | [JLCPCB](https://www.jlcpcb.com/) |
-| Estimated shipping | — | — | — | $1.61 | — |
-| **Estimated total** |  |  |  | **$30.98** |  |
+| 10k Resistor (100-pack) | 1 | AliExpress | $1.09 | $1.09 | [AliExpress](https://www.aliexpress.us/item/3256806338200607.html) |
+| PCB | 1 | JLCPCB | $7.80 | $7.80 | [JLCPCB](https://www.jlcpcb.com/) |
+| Estimated shipping | — | — | — | $2.37 | — |
+| **Estimated total** |  |  |  | **$29.84** |  |
