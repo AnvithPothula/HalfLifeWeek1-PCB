@@ -1,10 +1,10 @@
 Item,Qty,Supplier,Cost/item,Total Cost,link
-XIAO ESP32 C3,1,AliExpress,$8.61,$8.61,https://www.aliexpress.us/item/3256811424353248.html
-0.96 OLED,1,AliExpress,$2.07,$2.07,https://www.aliexpress.us/item/3256805941097111.html
+XIAO ESP32-C3,1,AliExpress,$1.09,$1.09,https://www.aliexpress.us/item/3256809541902816.html
+"0.96"" OLED (4-pin I2C, white)",1,AliExpress,$3.94,$3.94,https://www.aliexpress.us/item/3256805941097111.html
 MPU6050,1,AliExpress,$1.89,$1.89,https://www.aliexpress.us/item/2251800504697800.html
-DHT11,1,AliExpress,$1.54,$1.54,https://www.aliexpress.us/item/3256807009759634.html
-MX Switches (10-pack),1,AliExpress,$2.00,$2.00,https://www.aliexpress.us/item/3256806171731329.html
-Keycaps (10-pack),1,AliExpress,$2.47,$2.47,https://www.aliexpress.us/item/3256807312571573.html
-10k Resistor (100-pack),1,AliExpress,$1.09,$1.09,https://www.aliexpress.us/item/3256806338200607.html
-PCB,1,JLCPCB,$7.80,$7.80,https://www.jlcpcb.com/
-Estimated total shipping,1,,,$2.37,
+DHT11 sensor,1,AliExpress,$3.07,$3.07,https://www.aliexpress.us/item/3256807009759634.html
+"MX Switches (10-pack, red)",1,AliExpress,$5.60,$5.60,https://www.aliexpress.us/item/3256806171731329.html
+"Keycaps (10-pack, white)",1,AliExpress,$2.60,$2.60,https://www.aliexpress.us/item/3256807312571573.html
+10k Resistor (100-pack),1,AliExpress,$1.27,$1.27,https://www.aliexpress.us/item/3256806338200607.html
+PCB,1,JLCPCB,$2.80,$2.80,https://jlcpcb.com/
+Estimated total shipping,1,,,$9.95,
