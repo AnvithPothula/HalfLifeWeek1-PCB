@@ -45,13 +45,16 @@ The final bill for the materials is in [BOM.csv](BOM.csv), and you can also see 
 
 | Item | Qty | Supplier | Cost/item | Total cost | Link |
 | --- | ---: | --- | ---: | ---: | --- |
-| XIAO ESP32 C3 | 1 | AliExpress | $8.61 | $8.61 | [AliExpress](https://www.aliexpress.us/item/3256811424353248.html) |
-| 0.96 OLED | 1 | AliExpress | $2.07 | $2.07 | [AliExpress](https://www.aliexpress.us/item/3256805941097111.html) |
+| XIAO ESP32-C3 (new-shopper price, regular $9.32) | 1 | AliExpress | $1.09 | $1.09 | [AliExpress](https://www.aliexpress.us/item/3256809541902816.html) |
+| 0.96" OLED (4-pin I2C, white) | 1 | AliExpress | $3.94 | $3.94 | [AliExpress](https://www.aliexpress.us/item/3256805941097111.html) |
 | MPU6050 | 1 | AliExpress | $1.89 | $1.89 | [AliExpress](https://www.aliexpress.us/item/2251800504697800.html) |
-| DHT11 | 1 | AliExpress | $1.54 | $1.54 | [AliExpress](https://www.aliexpress.us/item/3256807009759634.html) |
-| MX Switches (10-pack) | 1 | AliExpress | $2.00 | $2.00 | [AliExpress](https://www.aliexpress.us/item/3256806171731329.html) |
-| Keycaps (10-pack) | 1 | AliExpress | $2.47 | $2.47 | [AliExpress](https://www.aliexpress.us/item/3256807312571573.html) |
-| 10k Resistor (100-pack) | 1 | AliExpress | $1.09 | $1.09 | [AliExpress](https://www.aliexpress.us/item/3256806338200607.html) |
-| PCB | 1 | JLCPCB | $7.80 | $7.80 | [JLCPCB](https://www.jlcpcb.com/) |
-| Estimated shipping | — | — | — | $2.37 | — |
-| **Estimated total** |  |  |  | **$29.84** |  |
+| DHT11 sensor | 1 | AliExpress | $3.07 | $3.07 | [AliExpress](https://www.aliexpress.us/item/3256807009759634.html) |
+| MX Switches (10-pack, red) | 1 | AliExpress | $5.60 | $5.60 | [AliExpress](https://www.aliexpress.us/item/3256806171731329.html) |
+| Keycaps (10-pack, white) | 1 | AliExpress | $2.60 | $2.60 | [AliExpress](https://www.aliexpress.us/item/3256807312571573.html) |
+| 10k Resistor (100-pack) | 1 | AliExpress | $1.27 | $1.27 | [AliExpress](https://www.aliexpress.us/item/3256806338200607.html) |
+| PCB | 1 | JLCPCB | $7.80 | $7.80 | [JLCPCB](https://jlcpcb.com/) |
+| JLCPCB coupon (JLCONE PCB $5) | — | JLCPCB | — | -$5.00 | [Coupon Center](https://jlcpcb.com/coupon-center) |
+| Shipping (AliExpress Choice) | — | AliExpress | — | $0.00 | — |
+| Shipping (JLCPCB Global Standard Direct Line) | — | JLCPCB | — | $8.37 | — |
+| Estimated sales tax (8.125% on AliExpress parts) | — | — | — | $1.58 | — |
+| **Estimated total** |  |  |  | **$32.21** |  |
